@@ -11,23 +11,28 @@ function bindEventListeners (dots) {
   for (var i = 0; i < dots.length; i++) {
     // BIND YOUR EVENT LISTENERS HERE
     // The first one is provided for you
-    dots[i].addEventListener('contextmenu', makeGreen)
-    dots[i].addEventListener('click', makeBlue)
+    dots[i].addEventListener('contextmenu', makeGreen);
+    dots[i].addEventListener('click', makeBlue);
+    dots[i].addEventListener('dblclick', hide);
   }
 }
 
 function makeGreen (evt) {
   evt.preventDefault()
-  evt.target.classList.toggle('green')
-  updateCounts()
+  evt.target.classList.toggle('green');
+  updateCounts();
 }
 
 // CREATE FUNCTION makeBlue HERE
 function makeBlue (evt) {
-  evt.target.classList.toggle('blue')
-  updateCounts()
+  evt.target.classList.toggle('blue');
+  updateCounts();
 }
 // CREATE FUNCTION hide HERE
+function hide (evt) {
+  evt.target.classList.toggle('invisible');
+  updateCounts();
+}
 
 function updateCounts () {
   var totals = {
